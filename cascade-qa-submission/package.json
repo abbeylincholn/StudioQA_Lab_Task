@@ -1,0 +1,35 @@
+{
+  "name": "studioqa-assessment",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Cascade QA engineer assessment — Playwright/TypeScript suite and evidence against the StudioQA Lab fixture",
+  "scripts": {
+    "setup": "npm ci && npx playwright install --with-deps chromium",
+    "test": "playwright test",
+    "test:gate": "playwright test --project=gating-api --project=gating-ui --project=gating-tablet",
+    "test:known-defects": "playwright test --project=known-defects",
+    "test:api": "playwright test --project=gating-api",
+    "test:ui": "playwright test --project=gating-ui",
+    "test:tablet": "playwright test --project=gating-tablet",
+    "typecheck": "tsc --noEmit",
+    "report": "playwright show-report",
+    "lab": "node ../qa_candidate_lab/server.mjs",
+    "evidence": "npm run evidence:baseline && npm run evidence:idempotency && npm run evidence:tenancy && npm run evidence:refund && npm run evidence:transient",
+    "evidence:baseline": "tsx evidence/p01-baseline.ts",
+    "evidence:idempotency": "tsx evidence/p02-idempotency.ts",
+    "evidence:tenancy": "tsx evidence/p03-tenancy-role.ts",
+    "evidence:refund": "tsx evidence/p04-refund.ts",
+    "evidence:transient": "tsx evidence/p05-transient.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.0",
+    "@types/node": "^22.10.2",
+    "dotenv": "^16.4.5",
+    "tsx": "4.19.2",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "personas": {
+    "ava": { "id": "ava", "role": "editor", "workspace": "alpha", "startingCredits": 3 },
+    "vic": { "id": "vic", "role": "viewer", "workspace": "alpha", "startingCredits": 3 },
+    "bea": { "id": "bea", "role": "editor", "workspace": "beta", "startingCredits": 2 }
+  },
+  "workspaces": {
+    "alpha": { "id": "alpha", "name": "Alpha Studio", "startingCredits": 3 },
+    "beta": { "id": "beta", "name": "Beta Studio", "startingCredits": 2 }
+  },
+  "prompts": {
+    "success": "a lighthouse in fog, muted palette",
+    "fail": "fail on purpose",
+    "transientError": "poll500 transient failure",
+    "xssPayload": "<img src=x onerror=\"window.__xssExecuted = true\">"
+  }
+}
