@@ -1,0 +1,245 @@
+[
+  {
+    "label": "reset",
+    "request": {
+      "method": "POST",
+      "path": "/api/reset",
+      "headers": {},
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "ok": true
+      }
+    },
+    "ms": 54
+  },
+  {
+    "label": "credits BEFORE",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 3
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 4
+  },
+  {
+    "label": "POST #1 (key=retry-key-fixed)",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "duplicate submission test",
+        "idempotencyKey": "retry-key-fixed"
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "duplicate submission test",
+          "idempotencyKey": "retry-key-fixed",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:11.928Z",
+          "updatedAt": "2026-08-21T08:34:11.928Z"
+        },
+        "credits": 2
+      }
+    },
+    "ms": 4
+  },
+  {
+    "label": "POST #2 (SAME key)",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "duplicate submission test",
+        "idempotencyKey": "retry-key-fixed"
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "job": {
+          "id": "job_1002",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "duplicate submission test",
+          "idempotencyKey": "retry-key-fixed",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:11.930Z",
+          "updatedAt": "2026-08-21T08:34:11.930Z"
+        },
+        "credits": 1
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "POST #3 (SAME key)",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "duplicate submission test",
+        "idempotencyKey": "retry-key-fixed"
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "job": {
+          "id": "job_1003",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "duplicate submission test",
+          "idempotencyKey": "retry-key-fixed",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:11.932Z",
+          "updatedAt": "2026-08-21T08:34:11.932Z"
+        },
+        "credits": 0
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "credits AFTER 3 identical POSTs",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 0
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "jobs alpha",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs?workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "jobs": [
+          {
+            "id": "job_1001",
+            "workspaceId": "alpha",
+            "createdBy": "ava",
+            "prompt": "duplicate submission test",
+            "idempotencyKey": "retry-key-fixed",
+            "status": "queued",
+            "result": null,
+            "error": null,
+            "createdAt": "2026-08-21T08:34:11.928Z",
+            "updatedAt": "2026-08-21T08:34:11.928Z"
+          },
+          {
+            "id": "job_1002",
+            "workspaceId": "alpha",
+            "createdBy": "ava",
+            "prompt": "duplicate submission test",
+            "idempotencyKey": "retry-key-fixed",
+            "status": "queued",
+            "result": null,
+            "error": null,
+            "createdAt": "2026-08-21T08:34:11.930Z",
+            "updatedAt": "2026-08-21T08:34:11.930Z"
+          },
+          {
+            "id": "job_1003",
+            "workspaceId": "alpha",
+            "createdBy": "ava",
+            "prompt": "duplicate submission test",
+            "idempotencyKey": "retry-key-fixed",
+            "status": "queued",
+            "result": null,
+            "error": null,
+            "createdAt": "2026-08-21T08:34:11.932Z",
+            "updatedAt": "2026-08-21T08:34:11.932Z"
+          }
+        ]
+      }
+    },
+    "ms": 1
+  }
+]

@@ -1,0 +1,1316 @@
+[
+  {
+    "label": "reset",
+    "request": {
+      "method": "POST",
+      "path": "/api/reset",
+      "headers": {},
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "ok": true
+      }
+    },
+    "ms": 52
+  },
+  {
+    "label": "credits before \"fail\"",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 3
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 3
+  },
+  {
+    "label": "create \"fail\"",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "fail",
+        "idempotencyKey": "refund-fail"
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "fail",
+          "idempotencyKey": "refund-fail",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:15.124Z",
+          "updatedAt": "2026-08-21T08:34:15.124Z"
+        },
+        "credits": 2
+      }
+    },
+    "ms": 4
+  },
+  {
+    "label": "credits after create \"fail\"",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 2
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "fail poll#0",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "fail",
+          "idempotencyKey": "refund-fail",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:15.124Z",
+          "updatedAt": "2026-08-21T08:34:15.124Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "fail poll#1",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "fail",
+          "idempotencyKey": "refund-fail",
+          "status": "failed",
+          "result": null,
+          "error": "Generation provider rejected the prompt",
+          "createdAt": "2026-08-21T08:34:15.124Z",
+          "updatedAt": "2026-08-21T08:34:15.327Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "credits after terminal \"fail\"",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 2
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "credits +1.5s settle \"fail\"",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 2
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "credits before \"please fail this job\"",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 2
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "create \"please fail this job\"",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "please fail this job",
+        "idempotencyKey": "refund-pleasefailthisjob"
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "job": {
+          "id": "job_1002",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "please fail this job",
+          "idempotencyKey": "refund-pleasefailthisjob",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:16.903Z",
+          "updatedAt": "2026-08-21T08:34:16.903Z"
+        },
+        "credits": 1
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "credits after create \"please fail this job\"",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 1
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "please f poll#0",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1002",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1002",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "please fail this job",
+          "idempotencyKey": "refund-pleasefailthisjob",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:16.903Z",
+          "updatedAt": "2026-08-21T08:34:16.903Z"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "please f poll#1",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1002",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1002",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "please fail this job",
+          "idempotencyKey": "refund-pleasefailthisjob",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:16.903Z",
+          "updatedAt": "2026-08-21T08:34:16.903Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "please f poll#2",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1002",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1002",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "please fail this job",
+          "idempotencyKey": "refund-pleasefailthisjob",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:16.903Z",
+          "updatedAt": "2026-08-21T08:34:16.903Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "please f poll#3",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1002",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1002",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "please fail this job",
+          "idempotencyKey": "refund-pleasefailthisjob",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:16.903Z",
+          "updatedAt": "2026-08-21T08:34:17.461Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "please f poll#4",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1002",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1002",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "please fail this job",
+          "idempotencyKey": "refund-pleasefailthisjob",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:16.903Z",
+          "updatedAt": "2026-08-21T08:34:17.461Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "please f poll#5",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1002",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1002",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "please fail this job",
+          "idempotencyKey": "refund-pleasefailthisjob",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:16.903Z",
+          "updatedAt": "2026-08-21T08:34:17.461Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "please f poll#6",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1002",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1002",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "please fail this job",
+          "idempotencyKey": "refund-pleasefailthisjob",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:16.903Z",
+          "updatedAt": "2026-08-21T08:34:17.461Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "please f poll#7",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1002",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1002",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "please fail this job",
+          "idempotencyKey": "refund-pleasefailthisjob",
+          "status": "failed",
+          "result": null,
+          "error": "Generation provider rejected the prompt",
+          "createdAt": "2026-08-21T08:34:16.903Z",
+          "updatedAt": "2026-08-21T08:34:18.617Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "credits after terminal \"please fail this job\"",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 1
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "credits +1.5s settle \"please fail this job\"",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 1
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "credits before \"ordinary concept art\"",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 1
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "create \"ordinary concept art\"",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "ordinary concept art",
+        "idempotencyKey": "refund-ordinaryconceptart"
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "job": {
+          "id": "job_1003",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "ordinary concept art",
+          "idempotencyKey": "refund-ordinaryconceptart",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:20.240Z",
+          "updatedAt": "2026-08-21T08:34:20.240Z"
+        },
+        "credits": 0
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "credits after create \"ordinary concept art\"",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 0
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "ordinary poll#0",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1003",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1003",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "ordinary concept art",
+          "idempotencyKey": "refund-ordinaryconceptart",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:20.240Z",
+          "updatedAt": "2026-08-21T08:34:20.240Z"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "ordinary poll#1",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1003",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1003",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "ordinary concept art",
+          "idempotencyKey": "refund-ordinaryconceptart",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:20.240Z",
+          "updatedAt": "2026-08-21T08:34:20.240Z"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "ordinary poll#2",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1003",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1003",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "ordinary concept art",
+          "idempotencyKey": "refund-ordinaryconceptart",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:20.240Z",
+          "updatedAt": "2026-08-21T08:34:20.240Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "ordinary poll#3",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1003",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1003",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "ordinary concept art",
+          "idempotencyKey": "refund-ordinaryconceptart",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:20.240Z",
+          "updatedAt": "2026-08-21T08:34:20.799Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "ordinary poll#4",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1003",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1003",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "ordinary concept art",
+          "idempotencyKey": "refund-ordinaryconceptart",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:20.240Z",
+          "updatedAt": "2026-08-21T08:34:20.799Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "ordinary poll#5",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1003",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1003",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "ordinary concept art",
+          "idempotencyKey": "refund-ordinaryconceptart",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:20.240Z",
+          "updatedAt": "2026-08-21T08:34:20.799Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "ordinary poll#6",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1003",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1003",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "ordinary concept art",
+          "idempotencyKey": "refund-ordinaryconceptart",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:20.240Z",
+          "updatedAt": "2026-08-21T08:34:20.799Z"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "ordinary poll#7",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1003",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1003",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "ordinary concept art",
+          "idempotencyKey": "refund-ordinaryconceptart",
+          "status": "succeeded",
+          "result": "Generated concept: ordinary concept art",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:20.240Z",
+          "updatedAt": "2026-08-21T08:34:21.954Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "credits after terminal \"ordinary concept art\"",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 0
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "credits +1.5s settle \"ordinary concept art\"",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 0
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "credits pre-exhaust#0",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 0
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "exhaust POST #0 (credits=0)",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "exhaust 0",
+        "idempotencyKey": "ex-0"
+      }
+    },
+    "response": {
+      "status": 402,
+      "body": {
+        "error": "No credits remaining"
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "credits pre-exhaust#1",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 0
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "exhaust POST #1 (credits=0)",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "exhaust 1",
+        "idempotencyKey": "ex-1"
+      }
+    },
+    "response": {
+      "status": 402,
+      "body": {
+        "error": "No credits remaining"
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "credits pre-exhaust#2",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 0
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "exhaust POST #2 (credits=0)",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "exhaust 2",
+        "idempotencyKey": "ex-2"
+      }
+    },
+    "response": {
+      "status": 402,
+      "body": {
+        "error": "No credits remaining"
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "credits pre-exhaust#3",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 0
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "exhaust POST #3 (credits=0)",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "exhaust 3",
+        "idempotencyKey": "ex-3"
+      }
+    },
+    "response": {
+      "status": 402,
+      "body": {
+        "error": "No credits remaining"
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "FINAL credits",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 0
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  }
+]

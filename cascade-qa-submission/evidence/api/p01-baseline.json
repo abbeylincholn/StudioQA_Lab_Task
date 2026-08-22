@@ -1,0 +1,528 @@
+[
+  {
+    "label": "reset",
+    "request": {
+      "method": "POST",
+      "path": "/api/reset",
+      "headers": {},
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "ok": true
+      }
+    },
+    "ms": 48
+  },
+  {
+    "label": "session ava/alpha",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 3
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 3
+  },
+  {
+    "label": "session vic/alpha",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=vic&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "vic",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "vic",
+          "name": "Vic",
+          "role": "viewer",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 3
+        },
+        "selected": {
+          "userId": "vic",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "session bea/beta",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=bea&workspaceId=beta",
+      "headers": {
+        "x-user-id": "bea",
+        "x-workspace-id": "beta"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "bea",
+          "name": "Bea",
+          "role": "editor",
+          "workspaceId": "beta"
+        },
+        "workspace": {
+          "id": "beta",
+          "name": "Beta Studio",
+          "credits": 2
+        },
+        "selected": {
+          "userId": "bea",
+          "workspaceId": "beta"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "jobs alpha (empty)",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs?workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "jobs": []
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "jobs beta (empty)",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs?workspaceId=beta",
+      "headers": {
+        "x-user-id": "bea",
+        "x-workspace-id": "beta"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "jobs": []
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "create job (ava/alpha)",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "a calm harbour at dawn",
+        "idempotencyKey": "p01-key-1"
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "a calm harbour at dawn",
+          "idempotencyKey": "p01-key-1",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T13:02:09.159Z",
+          "updatedAt": "2026-08-21T13:02:09.159Z"
+        },
+        "credits": 2
+      }
+    },
+    "ms": 3
+  },
+  {
+    "label": "credits after create",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 2
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "poll #0",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "a calm harbour at dawn",
+          "idempotencyKey": "p01-key-1",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T13:02:09.159Z",
+          "updatedAt": "2026-08-21T13:02:09.159Z"
+        }
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "poll #1",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "a calm harbour at dawn",
+          "idempotencyKey": "p01-key-1",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T13:02:09.159Z",
+          "updatedAt": "2026-08-21T13:02:09.159Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "poll #2",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "a calm harbour at dawn",
+          "idempotencyKey": "p01-key-1",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T13:02:09.159Z",
+          "updatedAt": "2026-08-21T13:02:09.159Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "poll #3",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "a calm harbour at dawn",
+          "idempotencyKey": "p01-key-1",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T13:02:09.159Z",
+          "updatedAt": "2026-08-21T13:02:09.724Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "poll #4",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "a calm harbour at dawn",
+          "idempotencyKey": "p01-key-1",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T13:02:09.159Z",
+          "updatedAt": "2026-08-21T13:02:09.724Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "poll #5",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "a calm harbour at dawn",
+          "idempotencyKey": "p01-key-1",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T13:02:09.159Z",
+          "updatedAt": "2026-08-21T13:02:09.724Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "poll #6",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "a calm harbour at dawn",
+          "idempotencyKey": "p01-key-1",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T13:02:09.159Z",
+          "updatedAt": "2026-08-21T13:02:09.724Z"
+        }
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "poll #7",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "a calm harbour at dawn",
+          "idempotencyKey": "p01-key-1",
+          "status": "succeeded",
+          "result": "Generated concept: a calm harbour at dawn",
+          "error": null,
+          "createdAt": "2026-08-21T13:02:09.159Z",
+          "updatedAt": "2026-08-21T13:02:10.862Z"
+        }
+      }
+    },
+    "ms": 3
+  },
+  {
+    "label": "credits after terminal",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 2
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "jobs alpha (after)",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs?workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "jobs": [
+          {
+            "id": "job_1001",
+            "workspaceId": "alpha",
+            "createdBy": "ava",
+            "prompt": "a calm harbour at dawn",
+            "idempotencyKey": "p01-key-1",
+            "status": "succeeded",
+            "result": "Generated concept: a calm harbour at dawn",
+            "error": null,
+            "createdAt": "2026-08-21T13:02:09.159Z",
+            "updatedAt": "2026-08-21T13:02:10.862Z"
+          }
+        ]
+      }
+    },
+    "ms": 1
+  }
+]

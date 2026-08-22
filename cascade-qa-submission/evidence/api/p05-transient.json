@@ -1,0 +1,3683 @@
+[
+  {
+    "label": "reset",
+    "request": {
+      "method": "POST",
+      "path": "/api/reset",
+      "headers": {},
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "ok": true
+      }
+    },
+    "ms": 47
+  },
+  {
+    "label": "create",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "transient error probe",
+        "idempotencyKey": "tr-1"
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.041Z"
+        },
+        "credits": 2
+      }
+    },
+    "ms": 5
+  },
+  {
+    "label": "status#0",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.041Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#1",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.041Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#2",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.041Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#3",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.041Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#4",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.041Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#5",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.041Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#6",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.603Z"
+        }
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "status#7",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.603Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#8",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.603Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#9",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.603Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#10",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.603Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#11",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.603Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#12",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.603Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#13",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.603Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#14",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.603Z"
+        }
+      }
+    },
+    "ms": 3
+  },
+  {
+    "label": "status#15",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "processing",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:25.603Z"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "status#16",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#17",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#18",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#19",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#20",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#21",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#22",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#23",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#24",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "status#25",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#26",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#27",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#28",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#29",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#30",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#31",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#32",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#33",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 3
+  },
+  {
+    "label": "status#34",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#35",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#36",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 3
+  },
+  {
+    "label": "status#37",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "status#38",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "status#39",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#40",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 3
+  },
+  {
+    "label": "status#41",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#42",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#43",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#44",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#45",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#46",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#47",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#48",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 3
+  },
+  {
+    "label": "status#49",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#50",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "status#51",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#52",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#53",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "status#54",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "status#55",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#56",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#57",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#58",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#59",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "status#60",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#61",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#62",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#63",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#64",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#65",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "status#66",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#67",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#68",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#69",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#70",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#71",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#72",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#73",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 3
+  },
+  {
+    "label": "status#74",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#75",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#76",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "status#77",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#78",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 3
+  },
+  {
+    "label": "status#79",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#80",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#81",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#82",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "status#83",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#84",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#85",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "status#86",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#87",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#88",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#89",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 3
+  },
+  {
+    "label": "status#90",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#91",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "status#92",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#93",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#94",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "status#95",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "status#96",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#97",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#98",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#99",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#100",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#101",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#102",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#103",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "status#104",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "status#105",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#106",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#107",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#108",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#109",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "status#110",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 0
+  },
+  {
+    "label": "status#111",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "status#112",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 2
+  },
+  {
+    "label": "status#113",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#114",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#115",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 3
+  },
+  {
+    "label": "status#116",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#117",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#118",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "status#119",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "final read",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1001",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "transient error probe",
+          "idempotencyKey": "tr-1",
+          "status": "succeeded",
+          "result": "Generated concept: transient error probe",
+          "error": null,
+          "createdAt": "2026-08-21T08:34:25.041Z",
+          "updatedAt": "2026-08-21T08:34:26.741Z"
+        }
+      }
+    },
+    "ms": 2
+  }
+]

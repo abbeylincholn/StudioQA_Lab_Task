@@ -1,0 +1,381 @@
+[
+  {
+    "label": "reset",
+    "request": {
+      "method": "POST",
+      "path": "/api/reset",
+      "headers": {},
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "ok": true
+      }
+    },
+    "ms": 51
+  },
+  {
+    "label": "seed alpha job",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "ALPHA SECRET client brief",
+        "idempotencyKey": "seed-a"
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "job": {
+          "id": "job_1001",
+          "workspaceId": "alpha",
+          "createdBy": "ava",
+          "prompt": "ALPHA SECRET client brief",
+          "idempotencyKey": "seed-a",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:13.613Z",
+          "updatedAt": "2026-08-21T08:34:13.613Z"
+        },
+        "credits": 2
+      }
+    },
+    "ms": 6
+  },
+  {
+    "label": "seed beta job",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "bea",
+        "x-workspace-id": "beta",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "BETA SECRET client brief",
+        "idempotencyKey": "seed-b"
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "job": {
+          "id": "job_1002",
+          "workspaceId": "beta",
+          "createdBy": "bea",
+          "prompt": "BETA SECRET client brief",
+          "idempotencyKey": "seed-b",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:13.615Z",
+          "updatedAt": "2026-08-21T08:34:13.615Z"
+        },
+        "credits": 1
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "R1a ava lists BETA jobs (header spoof)",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs?workspaceId=beta",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "beta"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "jobs": [
+          {
+            "id": "job_1002",
+            "workspaceId": "beta",
+            "createdBy": "bea",
+            "prompt": "BETA SECRET client brief",
+            "idempotencyKey": "seed-b",
+            "status": "queued",
+            "result": null,
+            "error": null,
+            "createdAt": "2026-08-21T08:34:13.615Z",
+            "updatedAt": "2026-08-21T08:34:13.615Z"
+          }
+        ]
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "R1b ava header=alpha query=beta",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs?workspaceId=beta",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "jobs": [
+          {
+            "id": "job_1001",
+            "workspaceId": "alpha",
+            "createdBy": "ava",
+            "prompt": "ALPHA SECRET client brief",
+            "idempotencyKey": "seed-a",
+            "status": "queued",
+            "result": null,
+            "error": null,
+            "createdAt": "2026-08-21T08:34:13.613Z",
+            "updatedAt": "2026-08-21T08:34:13.613Z"
+          }
+        ]
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "R1c ava GETs beta job by id (header=alpha)",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1002",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1002",
+          "workspaceId": "beta",
+          "createdBy": "bea",
+          "prompt": "BETA SECRET client brief",
+          "idempotencyKey": "seed-b",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:13.615Z",
+          "updatedAt": "2026-08-21T08:34:13.615Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "R1d ava GETs beta job (header=beta)",
+    "request": {
+      "method": "GET",
+      "path": "/api/jobs/job_1002",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "beta"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "job": {
+          "id": "job_1002",
+          "workspaceId": "beta",
+          "createdBy": "bea",
+          "prompt": "BETA SECRET client brief",
+          "idempotencyKey": "seed-b",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:13.615Z",
+          "updatedAt": "2026-08-21T08:34:13.615Z"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "R1e ava CREATES job in beta",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "beta",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "cross-tenant write",
+        "idempotencyKey": "x-tenant"
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "job": {
+          "id": "job_1003",
+          "workspaceId": "beta",
+          "createdBy": "ava",
+          "prompt": "cross-tenant write",
+          "idempotencyKey": "x-tenant",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:13.620Z",
+          "updatedAt": "2026-08-21T08:34:13.620Z"
+        },
+        "credits": 0
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "beta credits after Ava write",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=bea&workspaceId=beta",
+      "headers": {
+        "x-user-id": "bea",
+        "x-workspace-id": "beta"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "bea",
+          "name": "Bea",
+          "role": "editor",
+          "workspaceId": "beta"
+        },
+        "workspace": {
+          "id": "beta",
+          "name": "Beta Studio",
+          "credits": 0
+        },
+        "selected": {
+          "userId": "bea",
+          "workspaceId": "beta"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "R1f ava session on beta",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=beta",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "beta"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "beta",
+          "name": "Beta Studio",
+          "credits": 0
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "beta"
+        }
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "R4a vic creates job",
+    "request": {
+      "method": "POST",
+      "path": "/api/jobs",
+      "headers": {
+        "x-user-id": "vic",
+        "x-workspace-id": "alpha",
+        "content-type": "application/json"
+      },
+      "body": {
+        "prompt": "viewer should not create this",
+        "idempotencyKey": "viewer-1"
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {
+        "job": {
+          "id": "job_1004",
+          "workspaceId": "alpha",
+          "createdBy": "vic",
+          "prompt": "viewer should not create this",
+          "idempotencyKey": "viewer-1",
+          "status": "queued",
+          "result": null,
+          "error": null,
+          "createdAt": "2026-08-21T08:34:13.624Z",
+          "updatedAt": "2026-08-21T08:34:13.624Z"
+        },
+        "credits": 1
+      }
+    },
+    "ms": 1
+  },
+  {
+    "label": "alpha credits after viewer attempt",
+    "request": {
+      "method": "GET",
+      "path": "/api/session?userId=ava&workspaceId=alpha",
+      "headers": {
+        "x-user-id": "ava",
+        "x-workspace-id": "alpha"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "user": {
+          "id": "ava",
+          "name": "Ava",
+          "role": "editor",
+          "workspaceId": "alpha"
+        },
+        "workspace": {
+          "id": "alpha",
+          "name": "Alpha Studio",
+          "credits": 1
+        },
+        "selected": {
+          "userId": "ava",
+          "workspaceId": "alpha"
+        }
+      }
+    },
+    "ms": 1
+  }
+]
