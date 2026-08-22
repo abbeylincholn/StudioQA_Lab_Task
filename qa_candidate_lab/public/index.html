@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StudioQA Lab</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">Candidate QA lab</span>
+        <h1>StudioQA</h1>
+      </div>
+      <button id="reset" class="secondary">Reset lab</button>
+    </header>
+
+    <main class="shell">
+      <section class="panel session-panel">
+        <h2>Session</h2>
+        <div class="field-grid">
+          <label>User
+            <select id="user">
+              <option value="ava">Ava - editor</option>
+              <option value="vic">Vic - viewer</option>
+              <option value="bea">Bea - editor</option>
+            </select>
+          </label>
+          <label>Workspace
+            <select id="workspace">
+              <option value="alpha">Alpha Studio</option>
+              <option value="beta">Beta Studio</option>
+            </select>
+          </label>
+        </div>
+        <div class="session-meta">
+          <span id="role" class="pill">Role</span>
+          <span><strong id="credits">-</strong> credits</span>
+        </div>
+      </section>
+
+      <section class="panel generation-panel">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Async generation</span>
+            <h2>Create a concept</h2>
+          </div>
+          <span id="status-line" role="status" aria-live="polite"></span>
+        </div>
+        <label for="prompt">Prompt</label>
+        <textarea id="prompt" rows="4" placeholder="Describe the visual concept"></textarea>
+        <div class="request-row">
+          <code id="key"></code>
+          <button id="generate">Generate - 1 credit</button>
+        </div>
+        <p class="hint">Tip: requests are asynchronous. The UI polls until a final result is available.</p>
+      </section>
+
+      <section class="panel jobs-panel">
+        <div class="section-heading">
+          <h2>Recent jobs</h2>
+          <button id="refresh" class="secondary">Refresh</button>
+        </div>
+        <div id="jobs" class="jobs" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
