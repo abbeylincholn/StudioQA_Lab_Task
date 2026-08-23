@@ -11,7 +11,6 @@ jobs:
   gate:
     if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
-
     defaults:
       run:
         working-directory: cascade-qa-submission
@@ -20,18 +19,16 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: yarn
-          cache-dependency-path: cascade-qa-submission/yarn.lock
-
       - name: Enable Corepack
         run: corepack enable
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Install dependencies
-        run: yarn install --immutable
+        run: yarn install --frozen-lockfile
 
       - name: Install Playwright browsers
         run: yarn playwright install --with-deps chromium
@@ -55,7 +52,6 @@ jobs:
   nightly-known-defects:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
-
     defaults:
       run:
         working-directory: cascade-qa-submission
@@ -64,18 +60,16 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: yarn
-          cache-dependency-path: cascade-qa-submission/yarn.lock
-
       - name: Enable Corepack
         run: corepack enable
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Install dependencies
-        run: yarn install --immutable
+        run: yarn install --frozen-lockfile
 
       - name: Install Playwright browsers
         run: yarn playwright install --with-deps chromium
