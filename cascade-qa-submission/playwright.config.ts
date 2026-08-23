@@ -22,7 +22,7 @@ export default defineConfig({
   ],
 
   use: {
-    baseURL: process.env.LAB_URL ?? 'http://localhost:4173',
+    baseURL: process.env.LAB_URL || 'http://localhost:4173',
     actionTimeout: 10_000,
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
